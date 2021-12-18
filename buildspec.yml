@@ -17,11 +17,11 @@ phases:
       - mvn package
       - echo Building the Docker image...
       - sh build.sh
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image...
-      - docker push 106260173616.dkr.ecr.ap-northeast-1.amazonaws.com/aws_final_project:latest
+#  post_build:
+#    commands:
+#      - echo Build completed on `date`
+#      - echo Pushing the Docker image...
+#      - docker push 106260173616.dkr.ecr.ap-northeast-1.amazonaws.com/aws_final_project:latest
 artifacts:
   files:
   - cicdtest-0.0.1-SNAPSHOT.jar
