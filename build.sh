@@ -9,4 +9,4 @@ echo "image builded !"
 #echo "version: $version"
 #docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 #echo "image TAG done !"
-docker push $USERNAME/$IMAGE:$version
+docker push $USERNAME/$IMAGE:latest
