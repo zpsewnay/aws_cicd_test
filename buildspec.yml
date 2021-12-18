@@ -1,19 +1,25 @@
+
 version: 0.2
+
 phases:
   install:
     runtime-versions:
       java: corretto8
   pre_build:
     commands:
-    - echo In the pre_build phase...
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --registry-ids 106260173616 --region ap-northeast-1)
   build:
     commands:
-    - echo Build started on `date`
+      - echo Build started on `date`
+      - mvn package
+      - echo Building the Docker image...
+      - sh build.sh
   post_build:
     commands:
-    - echo Build completed on `date`
-    - mvn package
-#    - mv target/aws_cicd_test-0.0.1-SNAPSHOT.war aws_cicd_test-0.0.1-SNAPSHOT.war
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 106260173616.dkr.ecr.ap-northeast-1.amazonaws.com/cfc103_student03:latest
 artifacts:
   files:
   - aws_cicd_test-0.0.1-SNAPSHOT.jar
