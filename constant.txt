@@ -1,2 +1,3 @@
 name=jerry
 address=Asia
+money=10000000000
