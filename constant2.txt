@@ -1,3 +1,6 @@
+source=127.0.0.1:8080
+dest=127.0.0.1:9090
+ip=127.0.0.1
 date=2020-12-12
 color=red
 car=BMW
