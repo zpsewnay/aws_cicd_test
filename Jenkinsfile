@@ -4,7 +4,7 @@ pipeline {
     stages {
         
         tools {
-            mvn 'mvn_3_6_3' 
+            maven 'mvn_3_6_3' 
         }
     
         stage('Build') {
