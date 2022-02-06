@@ -1,12 +1,11 @@
 pipeline {
     agent {label 'ms'}
+    tools {
+        maven 'mvn_3_6_3' 
+    }
 
     stages {
-        
-        tools {
-            maven 'mvn_3_6_3' 
-        }
-    
+            
         stage('Build') {
             steps {
                 echo 'Building..'
